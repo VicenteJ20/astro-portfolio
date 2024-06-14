@@ -17,6 +17,12 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.10.1(typescript@5.4.5))(tailwindcss@3.4.4)
+      '@fontsource/poppins':
+        specifier: ^5.0.14
+        version: 5.0.14
+      '@fontsource/twinkle-star':
+        specifier: ^5.0.20
+        version: 5.0.20
       astro:
         specifier: ^4.10.1
         version: 4.10.1(typescript@5.4.5)
@@ -487,6 +493,12 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/poppins@5.0.14':
+    resolution: {integrity: sha512-nmM1zpPo3Uh4JcGAVSQuWaZNYh2FbbwWhZ5t6hRaynmJaNTBW85d3nEh9zMmzI0HX7X5xqQVdRHeDatKpOGsnA==}
+
+  '@fontsource/twinkle-star@5.0.20':
+    resolution: {integrity: sha512-kVuvs1ohuYOheEEWwwp/GsfGOnEML8W7GBcuo/iLk0GQs5sPVXcJalVjzeV11RIUiWTEg53rfVxhUIVG5v/xCQ==}
 
   '@img/sharp-darwin-arm64@0.33.4':
     resolution: {integrity: sha512-p0suNqXufJs9t3RqLBO6vvrgr5OhgbWp76s5gTRvdmxmuv9E1rcaqGUsl3l4mKVmXPkTkTErXediAui4x+8PSA==}
@@ -2681,6 +2693,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.4':
     optional: true
+
+  '@fontsource/poppins@5.0.14': {}
+
+  '@fontsource/twinkle-star@5.0.20': {}
 
   '@img/sharp-darwin-arm64@0.33.4':
     optionalDependencies:
