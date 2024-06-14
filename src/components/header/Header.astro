@@ -2,66 +2,43 @@
 import Image from "astro/components/Image.astro";
 import Link from "./Link.astro";
 ---
-<style>
-  .open {
-    opacity: 100;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    align-items: start;
-  }
 
-  /* Agrega una transición para suavizar el cambio de clases */
-  #nav-links {
-    transition: all 0.5s ease;
-  }
-</style>
-
-<header
-  class="flex h-20 justify-between w-full fixed max-w-screen-2xl transition-colors duration-300 ease-in-out top-0 mx-auto px-8 md:items-center  bg-white"
-  id="headerNav"
->
-  <div class="flex flex-row gap-4 items-center">
-    <Image
-      src="/images/profile.webp"
-      alt="Logo"
-      width={500}
-      height={500}
-      class="w-12 h-12 md:w-14 md:h-14 rounded-full"
-      loading="eager"
-    />
-    <h2 class="text-xl">
-      <a href="/" class="font-medium text-nowrap">Vicente Jorquera</a>
-    </h2>
-  </div>
-  <nav
-    id="nav-links"
-    class="transition-all md:items-center duration-300 ease-in-out opacity-0 md:opacity-100 h-full  w-full md:w-fit  md:flex "
-  >
-    <ul class="flex flex-row items-start md:items-center gap-4 w-full md:w-fit pointer-events-none md:pointer-events-auto ">
-      <li class="w-full">
-        <Link href="/" text="Inicio" type="internal" />
-      </li>
-      <li>
-        <Link href="/" text="blog" type="internal" />
-      </li>
-      <li>
-        <Link href="/" text="proyectos" type="internal" />
-      </li>
-      <li>
-        <Link href="/" text="contacto" type="internal" />
-      </li>
-    </ul>
-  </nav>
-  <button
-    type="button"
-    title="handle-menu"
-    id="handle-menu"
-    class="absolute right-8 top-6 md:hidden"
-  >
+<header class="relative top-0 max-w-screen-2xl mx-auto transition-all duration-500 ease-in-out h-fit" id="headerNav">
+  <section id="headerSection" class='top-0 left-0 md:left-auto transition-all duration-500 ease-in-out flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between px-8 py-3 w-full fixed max-w-screen-2xl backdrop-blur-xl bg-opacity-70 bg-zinc-950 z-20'>
+    <div class='p-0 flex flex-row items-center gap-x-2'>
+      <Image
+        src="/images/profile.webp"
+        width={500}
+        height={500}
+        alt="Vicente Jorquera profile"
+        class="rounded-full w-12 h-12"
+        loading='eager'
+      />
+      <h2 class="text-lg font-semibold text-white">
+        <Link href='/' text='Vicente Jorquera' type='secondary' />
+      </h2>
+    </div>
+    <nav id="nav" class="opacity-0 md:opacity-100 size-0 md:size-auto pointer-events-none md:pointer-events-auto w-full transition-all duration-300 ease-in-out">
+      <ul class="flex flex-col md:flex-row gap-8 md:gap-4 text-xl md:text-lg text-start uppercase md:capitalize">
+        <li>
+          <Link href="/" text="Home" type="primary" />
+        </li>
+        <li>
+          <Link href="/about" text="About" type="primary" />
+        </li>
+        <li>
+          <Link href="/blog" text="Blog" type="primary" />
+        </li>
+        <li>
+          <Link href="/contact" text="Contact" type="primary" />
+        </li>
+      </ul>
+    </nav>
+  </section>
+  <button id="toggleNav" class="absolute top-6 right-8 md:hidden z-20">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6"
+      class="h-6 w-6 text-white"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -70,40 +47,33 @@ import Link from "./Link.astro";
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="2"
-        d="M4 6h16M4 12h16m-7 6h7"></path>
+        d="M4 6h16M4 12h16m-7 6h7"
+      />
     </svg>
   </button>
 </header>
 
 <script>
-  const handleMenu = document.getElementById("handle-menu") as HTMLButtonElement;
-  const navLinks = document.getElementById("nav-links") as HTMLElement;
-  const headerNav = document.getElementById("headerNav") as HTMLDivElement;
-  const navLinksList = navLinks.querySelector("#nav-links ul") as HTMLUListElement;
-  const headerNavHeader = headerNav.querySelector("#headerNav div") as HTMLDivElement;
+  const headerNav = document.getElementById('headerNav') as HTMLElement;
+  const headerSection = document.getElementById('headerSection') as HTMLElement;
+  const toggleNav = document.getElementById('toggleNav') as HTMLElement;
+  const nav = document.getElementById('nav') as HTMLElement;
 
-  handleMenu.addEventListener("click", () => {
-    if (headerNav.classList.contains('h-20')) {
-      headerNav.classList.remove('h-20')
-      headerNavHeader.classList.add('h-20')
-      headerNav.classList.add('h-full', 'flex-col')
-      navLinks.classList.remove('closed')
-      navLinks.classList.add('open')
-      navLinksList.classList.remove('flex-row')
-      navLinksList.classList.add('flex-col', 'w-full')
 
-      if (navLinksList.classList.contains('pointer-events-none')) {
-        navLinksList.classList.remove('pointer-events-none')
-      }
+  toggleNav.addEventListener('click', () => {
+    nav.classList.toggle('pointer-events-none')
+
+    if (nav.classList.contains('size-0')) {
+      nav.classList.remove('size-0');
+      nav.classList.add('size-100', 'pt-12');
+      nav.classList.remove('opacity-0');
+      headerSection.classList.add('h-screen');
     } else {
-      navLinks.classList.remove('open')
-      navLinks.classList.add('opacity-0')
-      headerNav.classList.remove('h-full', 'flex-col')
-      headerNav.classList.add('h-20')
-      headerNavHeader.classList.remove('h-20')
-      navLinksList.classList.remove('flex-col', 'w-full')
-      navLinksList.classList.add('flex-row')
-      navLinksList.classList.add('pointer-events-none')
+      nav.classList.remove('size-100', 'pt-12');
+      nav.classList.add('size-0');
+      headerNav.classList.add('bg-transparent');
+      headerSection.classList.remove('h-screen');
+      nav.classList.add('opacity-0');
     }
-  });
+  })
 </script>

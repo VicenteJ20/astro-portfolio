@@ -7,6 +7,9 @@ const { href, text, type } = Astro.props as {
 }
 ---
 
-<a href={href} class="w-full">
+<a href={href} class={`w-full relative text-slate-50 ${type === 'primary' && 'pl-5'}`}>
+  {
+    type === 'primary' && <span class="md:hidden absolute top-0 left-0 bottom-0 rounded-xl w-2 bg-zinc-500"></span>
+  }
   {text}
 </a>
