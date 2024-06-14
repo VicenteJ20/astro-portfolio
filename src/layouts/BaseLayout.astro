@@ -1,7 +1,7 @@
 ---
+import '@fontsource/poppins';
 import Footer from "../components/Footer.astro";
 import Header from "../components/header/Header.astro";
-
 const { pageTitle } = Astro.props;
 ---
 
@@ -12,12 +12,40 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <style is:global>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      .image-bg {
+        background-image: url('/images/background-pattern-3.svg');
+        background-position: left top;
+        background-repeat: repeat;
+        background-size: 100%;
+      }
+
+      @media screen and (max-width:1500px){
+        .image-bg {
+          background-size: 150%;
+        }
+      }
+
+      @media screen and (max-width:1200px){
+        .image-bg {
+          background-size: 200%;
+        }
+      }
+
+      @media screen and (max-width:900px){
+        .image-bg {
+          background-size: 250%;
+        }
+      }
+    </style>
   </head>
-  <body class="bg-zinc-950 text-zinc-100">
-    <div id="limeDivsContainer" class="relative"/>
-    <main class="w-screen backdrop-blur-3xl ">
+  <body class="bg-zinc-950 text-zinc-100 image-bg p-0">
+    <main class="w-screen backdrop-blur-4xl p-0 min-h-screen" >
       <Header />
-      <section class='max-w-screen-2xl mx-auto px-8 pb-4 pt-[4.5rem] min-h-[95vh]'>
+      <section class='max-w-screen-2xl mx-auto px-8 pb-4 pt-[4.5rem]'>
         <slot />
       </section>
       <Footer />
