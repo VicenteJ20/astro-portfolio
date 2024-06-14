@@ -4,7 +4,7 @@ import Link from "./Link.astro";
 ---
 
 <header class="relative top-0 max-w-screen-2xl mx-auto transition-all duration-500 ease-in-out h-fit" id="headerNav">
-  <section id="headerSection" class='top-0 left-0 md:left-auto transition-all duration-500 ease-in-out flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between px-8 py-3 w-full fixed max-w-screen-2xl backdrop-blur-xl bg-opacity-70 bg-zinc-950 z-20'>
+  <section id="headerSection" class='top-0 left-0 md:left-auto transition-all duration-500 ease-in-out flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between px-8 py-3 w-full fixed max-w-screen-2xl backdrop-blur-xl bg-opacity-70 z-20'>
     <div class='p-0 flex flex-row items-center gap-x-2'>
       <Image
         src="/images/profile.webp"
@@ -14,23 +14,23 @@ import Link from "./Link.astro";
         class="rounded-full w-12 h-12"
         loading='eager'
       />
-      <h2 class="text-lg font-semibold text-white">
+      <h2 class="text-lg font-medium text-stone-100">
         <Link href='/' text='Vicente Jorquera' type='secondary' />
       </h2>
     </div>
     <nav id="nav" class="opacity-0 md:opacity-100 size-0 md:size-auto pointer-events-none md:pointer-events-auto w-full transition-all duration-300 ease-in-out">
-      <ul class="flex flex-col md:flex-row gap-8 md:gap-4 text-xl md:text-lg text-start uppercase md:capitalize">
+      <ul class="flex flex-col md:flex-row gap-8 md:gap-4 text-xl md:text-lg text-start uppercase md:capitalize font-medium text-zinc-400">
         <li>
-          <Link href="/" text="Home" type="primary" />
+          <Link href="/" text="Inicio" type="primary" />
         </li>
         <li>
-          <Link href="/about" text="About" type="primary" />
+          <Link href="/about" text="Blog" type="primary" />
         </li>
         <li>
-          <Link href="/blog" text="Blog" type="primary" />
+          <Link href="/blog" text="Proyectos" type="primary" />
         </li>
         <li>
-          <Link href="/contact" text="Contact" type="primary" />
+          <Link href="/contact" text="Contacto" type="primary" />
         </li>
       </ul>
     </nav>
@@ -67,12 +67,12 @@ import Link from "./Link.astro";
       nav.classList.remove('size-0');
       nav.classList.add('size-100', 'pt-12');
       nav.classList.remove('opacity-0');
-      headerSection.classList.add('h-screen');
+      headerSection.classList.add('h-screen', 'bg-zinc-950');
     } else {
       nav.classList.remove('size-100', 'pt-12');
       nav.classList.add('size-0');
       headerNav.classList.add('bg-transparent');
-      headerSection.classList.remove('h-screen');
+      headerSection.classList.remove('h-screen', 'bg-zinc-950');
       nav.classList.add('opacity-0');
     }
   })
