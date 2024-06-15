@@ -1,10 +1,10 @@
 ---
 import Image from "astro/components/Image.astro";
-import Link from "./Link.astro";
+import Link from "../Link.astro";
 ---
 
 <header class="relative top-0 max-w-screen-2xl mx-auto transition-all duration-500 ease-in-out h-fit" id="headerNav">
-  <section id="headerSection" class='top-0 left-0 md:left-auto transition-all duration-500 ease-in-out flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between px-8 py-3 w-full fixed max-w-screen-2xl backdrop-blur-xl bg-opacity-70 z-20'>
+  <section id="headerSection" class='top-0 left-0 md:left-auto transition-all duration-500 ease-in-out flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between px-8 py-5 w-full fixed max-w-screen-2xl  bg-opacity-70 z-20'>
     <div class='p-0 flex flex-row items-center gap-x-2'>
       <Image
         src="/images/profile.webp"
@@ -24,18 +24,18 @@ import Link from "./Link.astro";
           <Link href="/" text="Inicio" type="primary" />
         </li>
         <li>
-          <Link href="/about" text="Blog" type="primary" />
+          <Link href="/blog" text="Blog" type="primary" />
         </li>
         <li>
-          <Link href="/blog" text="Proyectos" type="primary" />
+          <Link href="/proyectos" text="Proyectos" type="primary" />
         </li>
         <li>
-          <Link href="/contact" text="Contacto" type="primary" />
+          <Link href="/contacto" text="Contacto" type="primary" />
         </li>
       </ul>
     </nav>
   </section>
-  <button id="toggleNav" class="absolute top-6 right-8 md:hidden z-20">
+  <button id="toggleNav" class="absolute top-8 right-8 md:hidden z-20">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="h-6 w-6 text-white"
@@ -67,12 +67,12 @@ import Link from "./Link.astro";
       nav.classList.remove('size-0');
       nav.classList.add('size-100', 'pt-12');
       nav.classList.remove('opacity-0');
-      headerSection.classList.add('h-screen', 'bg-zinc-950');
+      headerSection.classList.add('h-screen', 'bg-zinc-950', 'backdrop-blur-xl');
     } else {
       nav.classList.remove('size-100', 'pt-12');
       nav.classList.add('size-0');
       headerNav.classList.add('bg-transparent');
-      headerSection.classList.remove('h-screen', 'bg-zinc-950');
+      headerSection.classList.remove('h-screen', 'bg-zinc-950', 'backdrop-blur-xl');
       nav.classList.add('opacity-0');
     }
   })
