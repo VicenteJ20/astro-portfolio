@@ -42,10 +42,10 @@ const { pageTitle } = Astro.props;
       }
     </style>
   </head>
-  <body class="bg-zinc-950 text-zinc-100 image-bg p-0">
-    <main class="w-screen backdrop-blur-4xl p-0 min-h-screen" >
+  <body class="bg-zinc-950 text-zinc-100 image-bg p-0 max-w-screen">
+    <main class="backdrop-blur-4xl p-0 min-h-screen" >
       <Header />
-      <section class='max-w-screen-2xl mx-auto px-8 pb-4 pt-[4.5rem] min-h-[95vh]'>
+      <section class='max-w-screen-2xl mx-auto px-8 pb-20 pt-[4.5rem] min-h-[95vh]'>
         <slot />
       </section>
       <Footer />
