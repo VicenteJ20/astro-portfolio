@@ -1,27 +1,89 @@
 ---
-import { getCollection } from "astro:content"
-import BaseLayout from "../layouts/BaseLayout.astro"
-const allPosts = await getCollection('posts')
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Link from "../components/Link.astro";
+import LinkedinIcon from "../icons/LinkedinIcon.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
+import TwitterIcon from "../icons/TwitterIcon.astro";
+import BasicCardPost from "../components/BasicCardPost.astro";
+import type { PostBasicProps } from "../interfaces/Posts";
+const allPosts = await getCollection("posts");
 ---
 
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-	</head>
-	<body>
-		<BaseLayout pageTitle="Inicio">
-			<h1>Inicio</h1>
-			{
-				allPosts.map((post: any) => (
-					<article>
-						<h2>{post.data.title}</h2>
-						<p>{post.data.description}</p>
-					</article>
-				))
-			}
-		</BaseLayout>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <BaseLayout pageTitle="Inicio">
+      <section class="py-32 md:py-44 flex flex-col gap-6 xl:max-w-[60%]">
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-semibold">
+          Hola, soy Vicente!
+        </h1>
+        <p class="text-base font-base text-zinc-200 inset-1.5">
+          Soy <span class="text-lime-400">Analista programador</span> y <span
+            class="text-lime-400">Desarrollador web full-stack</span
+          > con más de 3 años de experiencia desarrollando soluciones full-stack
+          <span class="italic">(frontend + backend + infraestructura).</span> Actualmente
+          mi stack de preferencia es NextJS + TypeScript + Prisma + AWS, sin embargo,
+          cuento otras habilidadesy tecnologías que encontrarás en mis proyectos
+          y posts.
+        </p>
+        <ul class="flex gap-8 items-center">
+          <li>
+            <Link
+              href="https://www.linkedin.com/in/vicentejorquera"
+              type="external"
+              text=""
+              icon={true}
+            >
+              <LinkedinIcon classes="w-9 fill-zinc-200" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://www.linkedin.com/in/vicentejorquera"
+              type="external"
+              text=""
+              icon={true}
+            >
+              <GithubIcon classes="w-9 fill-zinc-200" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://www.linkedin.com/in/vicentejorquera"
+              type="external"
+              text=""
+              icon={true}
+            >
+              <TwitterIcon classes="w-9 fill-zinc-200" />
+            </Link>
+          </li>
+        </ul>
+      </section>
+      <section class="flex flex-col gap-y-4">
+        <header class="flex justify-between items-center w-full">
+          <h2 class="text-xl font-semibold">Últimos posts</h2>
+          <Link type="more" href="/posts" text="Ver todos los posts" />
+        </header>
+        <section class='grid grid-cols-1 md:grid-cols-2 gap-4'>
+          {
+            allPosts.map((post: PostBasicProps) => (
+              <BasicCardPost
+                title={post.data.title}
+                description={post.data.description}
+                id={post.id}
+                date={post.data.pubDate}
+                slug={post.data.slug}
+              />
+            ))
+          }
+        </section>
+      </section>
+    </BaseLayout>
+  </body>
 </html>
