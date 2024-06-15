@@ -1,0 +1,15 @@
+---
+const { href, text, type, icon } = Astro.props as {
+  href: string;
+  text: string;
+  type: 'internal' | 'external' | 'primary' | 'secondary' | 'more';
+  icon?: boolean;
+}
+---
+
+<a href={href} class={` text-slate-50 ${type === 'primary' && 'pl-5 relative'} ${type === 'more' ? 'underline block w-fit' : 'w-full'}`}>
+  {
+    type === 'primary' && <span class="md:hidden absolute top-0 left-0 bottom-0 rounded-xl w-2 bg-zinc-500"></span>
+  }
+  {icon ? <slot /> : text}
+</a>
