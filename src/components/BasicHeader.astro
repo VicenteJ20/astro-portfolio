@@ -1,0 +1,9 @@
+---
+import Link from './Link.astro'
+const { title, refBtn, titleBtn } = Astro.props as { title: string, refBtn: string, titleBtn: string }
+---
+
+<header class="flex justify-between items-center w-full">
+  <h2 class="text-xl font-semibold capitalize">{title}</h2>
+  { refBtn && title && <Link type="more" href={refBtn} text={titleBtn} />}
+</header>

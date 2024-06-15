@@ -1,0 +1,52 @@
+---
+const { item } = Astro.props as {
+  item: {
+    id: number;
+    title: string;
+    description: string;
+    company: string;
+    datePlace: {
+      start: string;
+      end: string;
+      place: string;
+    };
+  };
+};
+---
+
+<div
+  class="bg-zinc-950 p-4 rounded-lg bg-opacity-45 border border-zinc-700 flex flex-col gap-1.5 experience-card select-none cursor-pointer transition-all duration-300 ease-in-out hover:bg-opacity-50"
+>
+  <header class="flex flex-col items-start md:flex-row gap-1.5 md:gap-4 md:justify-between md:items-center">
+    <h3 class="font-semibold text-lg text-zinc-200">
+      {item.company} - {item.title}
+    </h3>
+    <p class="font-medium text-base text-zinc-100">
+      {item.datePlace.place} | {item.datePlace.start} - {item.datePlace.end}
+    </p>
+  </header>
+  <p class='text-zinc-300 line-clamp-1 experience-description'>{item.description}</p>
+</div>
+
+<script>
+  const cards = document.querySelectorAll(".experience-card");
+  const description = document.querySelectorAll(".experience-description");
+
+
+  cards.forEach((card, index) => {
+    card.addEventListener("click", (item) => {
+      description[index].classList.toggle("line-clamp-1");
+      if (description[index].classList.contains('text-zinc-300')) {
+        card.classList.remove('border-zinc-700');
+        card.classList.add('border-lime-500');
+        description[index].classList.remove('text-zinc-300');
+        description[index].classList.add('text-zinc-100');
+      } else {
+        card.classList.remove('border-lime-500');
+        card.classList.add('border-zinc-700');
+        description[index].classList.remove('text-zinc-100');
+        description[index].classList.add('text-zinc-300');
+      }
+    });
+  });
+</script>
