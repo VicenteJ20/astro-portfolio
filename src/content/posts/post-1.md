@@ -7,6 +7,7 @@ image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'The full Astro logo.'
 tags: ["astro", "blogging", "learning in public", "javascript", "typescript"]
+slug: 'como-desplegar-tu-app-de-next-js-en-tu-propio-servidor-linux'
 ---
 
 ## What I've accomplished
