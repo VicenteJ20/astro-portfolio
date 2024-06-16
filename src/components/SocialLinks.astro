@@ -1,0 +1,27 @@
+---
+import LinkedinIcon from "../icons/LinkedinIcon.astro";
+import TwitterIcon from "../icons/TwitterIcon.astro";
+import LinkRefIcon from "./LinkRefIcon.astro";
+
+const { type, slug } = Astro.props;
+const baseLink = `https://blog.vicentejorquera.dev/articulos/persistir-scripts-entre-view-transitions-con-astro`;
+
+const twitterMessage =
+  "He leído este post de @jvicente_20 y el contenido me pareció muy interesante.👌\nAccede y comparte el contenido con el siguiente link.🔗:\n";
+const linkedinMessage = "He leído este post de @jvicente_20 y el contenido me pareció muy interesante.👌\nAccede y comparte el contenido con el siguiente link.🔗:\n";
+---
+
+<ul class='flex flex-row gap-4 items-center'>
+  <li>
+    <LinkRefIcon
+      url={`https://twitter.com/share?url=${baseLink}&text=${twitterMessage}`}
+    >
+      <TwitterIcon />
+    </LinkRefIcon>
+  </li>
+  <li>
+    <LinkRefIcon url={`https://www.linkedin.com/sharing/share-offsite/?url=${baseLink}`}>
+      <LinkedinIcon />
+    </LinkRefIcon>
+  </li>
+</ul>
