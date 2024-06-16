@@ -4,8 +4,8 @@ pubDate: 2022-07-01
 description: 'This is the first post of my new Astro blog.'
 author: 'Vicente Jorquera'
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
-    alt: 'The full Astro logo.'
+    url: '/images/background-pattern.webp'
+    alt: 'Persistir scripts en Astro - Home'
 tags: ["astro", "blogging", "learning in public", "javascript", "typescript"]
 slug: 'como-desplegar-tu-app-de-next-js-en-tu-propio-servidor-linux'
 ---
