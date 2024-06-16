@@ -1,20 +1,29 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const allPosts = await getCollection("posts");
+import HeaderPage from "../../components/HeaderPage.astro";
+import CardsGrid from "../../components/CardsGrid.astro";
+import BasicCard from "../../components/BasicCard.astro";
+const allProjects = await getCollection("projects");
 ---
 
-<BaseLayout pageTitle="Blog">
-  <h1>Blog</h1>
-  <p>Here you can see all the posts</p>
-  <ul>
+<BaseLayout pageTitle="Proyectos">
+  <HeaderPage
+    title="Proyectos"
+    description="Aquí encontrarás algunos de mis proyectos personales y profesionales. Si te interesa colaborar, no dudes en contactarme. El código fuente de algunos de mis proyectos está disponible en Github"
+  />
+  <CardsGrid>
     {
-      allPosts.map((post) => (
-        <li>
-          <a href={`/proyectos/${post.slug}`}>{post.data.title}</a>
-        </li>
-      
+      allProjects.map((project) => (
+        <BasicCard
+          key={project.slug}
+          title={project.data.title}
+          description={project.data.description}
+          image={project.data.image}
+          slug={project.slug}
+          type="proyectos"
+        />
       ))
     }
-  </ul>
+  </CardsGrid>
 </BaseLayout>
