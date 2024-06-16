@@ -5,8 +5,7 @@ import Link from "../components/Link.astro";
 import LinkedinIcon from "../icons/LinkedinIcon.astro";
 import GithubIcon from "../icons/GithubIcon.astro";
 import TwitterIcon from "../icons/TwitterIcon.astro";
-import BasicCardPost from "../components/BasicCardPost.astro";
-import BasicCardProject from "../components/BasicCardProject.astro";
+import BasicCard from "../components/BasicCard.astro";
 import BasicHeader from "../components/BasicHeader.astro";
 import allExperience from "../json/experience.json";
 import ExperienceCard from "../components/ExperienceCard.astro";
@@ -73,12 +72,13 @@ const allProjects = (await getCollection("projects")).slice(-3);
       <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {
           allPosts.map((post: PostBasicProps) => (
-            <BasicCardPost
+            <BasicCard
               title={post.data.title}
               description={post.data.description}
               id={post.id}
               date={post.data.pubDate}
               slug={post.data.slug}
+              type="blog"
             />
           ))
         }
@@ -93,12 +93,13 @@ const allProjects = (await getCollection("projects")).slice(-3);
       <section class="flex flex-col gap-4">
         {
           allProjects.map((project: PostBasicProps) => (
-            <BasicCardProject
+            <BasicCard
               title={project.data.title}
               description={project.data.description}
               id={project.id}
               date={project.data.pubDate}
               slug={project.data.slug}
+              type="proyectos"
             />
           ))
         }
