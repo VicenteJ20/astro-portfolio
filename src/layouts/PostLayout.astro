@@ -53,5 +53,8 @@ const { frontmatter } = Astro.props;
       <SocialLinks type={frontmatter.type} slug={frontmatter.slug} />
     </div>
   </section>
+  <section class='pb-6 pt-2'>
+    <p class='break-words'>{frontmatter.description}</p>
+  </section>
   <slot />
 </BaseLayout>
