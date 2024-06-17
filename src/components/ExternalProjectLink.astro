@@ -1,0 +1,10 @@
+---
+import ExternalIcon from "../icons/ExternalIcon.astro"
+
+const { type, url } = Astro.props
+---
+
+<a href={url} type='button' target='_blank' class='bg-zinc-950 border border-zinc-700 text-center px-4 py-4 rounded-lg bg-opacity-75 transition-all duration-300 ease-in-out hover:border-lime-400 hover:bg-opacity-100 flex gap-4 items-center justify-center font-medium'>
+  { type === 'repo' ? 'Ir al respositorio' : 'Ir a la web'}
+  <ExternalIcon class='w-2 h-2' stroke="#f8fafc" />
+</a>
