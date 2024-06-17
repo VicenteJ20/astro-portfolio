@@ -6,7 +6,7 @@ import ExternalProjectLink from "../components/ExternalProjectLink.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout pageTitle={frontmatter.title} layout="post">
   <header class="py-6 flex flex-col gap-8">
     <div class="flex flex-row gap-2 items-center text-lg">
       <h3 class="capitalize text-lime-300">{frontmatter.type}</h3>
@@ -55,12 +55,22 @@ const { frontmatter } = Astro.props;
       <SocialLinks type={frontmatter.type} slug={frontmatter.slug} />
     </div>
   </section>
-  <section class='pb-6 pt-2'>
-    <p class='break-words'>{frontmatter.description}</p>
+  <section class="pb-6 pt-2">
+    <p class="break-words">{frontmatter.description}</p>
   </section>
-  <section class='grid grid-cols-1 md:grid-cols-2 gap-4 items-center'>
-    <ExternalProjectLink url={frontmatter.links.demo} type='web' />
-    <ExternalProjectLink url={frontmatter.links.repo} type='repo' />
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+    <ExternalProjectLink url={frontmatter.links.demo} type="web" />
+    <ExternalProjectLink url={frontmatter.links.repo} type="repo" />
   </section>
-  <slot />
+  <section class="py-6 inset-3.5" id="PostProjectSlot">
+    <slot />
+  </section>
 </BaseLayout>
+
+<script>
+  const links = document.querySelectorAll("#PostProjectSlot a");
+  links.forEach((link) => {
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+  });
+</script>
