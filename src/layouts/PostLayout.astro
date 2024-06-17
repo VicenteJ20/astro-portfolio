@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
 import SocialLinks from "../components/SocialLinks.astro";
+import ExternalProjectLink from "../components/ExternalProjectLink.astro";
 const { frontmatter } = Astro.props;
 ---
 
@@ -27,8 +28,9 @@ const { frontmatter } = Astro.props;
     <Image
       alt={frontmatter.image.alt}
       src={frontmatter.image.url}
-      inferSize
-      class="w-full max-h-[35rem] object-cover object-top rounded-xl"
+      width={1200}
+      height={800}
+      class="w-full max-h-80 md:max-h-[35rem] object-cover object-top rounded-xl"
       loading="eager"
     />
     <figcaption class="italic">Fuente: {frontmatter.image.source}</figcaption>
@@ -55,6 +57,10 @@ const { frontmatter } = Astro.props;
   </section>
   <section class='pb-6 pt-2'>
     <p class='break-words'>{frontmatter.description}</p>
+  </section>
+  <section class='grid grid-cols-1 md:grid-cols-2 gap-4 items-center'>
+    <ExternalProjectLink url={frontmatter.links.demo} type='web' />
+    <ExternalProjectLink url={frontmatter.links.repo} type='repo' />
   </section>
   <slot />
 </BaseLayout>
