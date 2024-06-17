@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "./BaseLayout.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title} layout="post">
+  <header class="py-6 flex flex-col gap-8">
+    <div class="flex flex-row gap-2 items-center text-lg">
+      <h3 class="capitalize">{frontmatter.title}</h3>
+    </div>
+  </header>
+</BaseLayout>
