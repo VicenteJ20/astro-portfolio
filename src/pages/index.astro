@@ -110,7 +110,7 @@ const allProjects = (await getCollection("projects")).slice(-3);
       <section class="flex flex-col gap-4">
         {
           allExperience.map((experience) => (
-            <ExperienceCard item={experience} />
+            <ExperienceCard item={experience} key={experience.id} />
           ))
         }
       </section>
