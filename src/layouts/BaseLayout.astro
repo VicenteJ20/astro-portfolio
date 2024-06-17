@@ -2,7 +2,7 @@
 import '@fontsource/poppins';
 import Footer from "../components/Footer.astro";
 import Header from "../components/header/Header.astro";
-const { pageTitle } = Astro.props;
+const { pageTitle, layout } = Astro.props;
 ---
 
 <html lang="es">
@@ -11,6 +11,11 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    {
+      layout === 'post' && (
+        <link rel="stylesheet" href='/src/styles/postStyles.css' />
+      )
+    }
     <title>{pageTitle}</title>
     <style is:global>
       body {
