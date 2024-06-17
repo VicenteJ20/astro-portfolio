@@ -15,7 +15,7 @@ slug: 'multi-step-form-vicente-jorquera-frontend-mentor'
 type: 'proyectos'
 links:
     repo: https://github.com/VicenteJ20/multi-step-form
-    demo: https://www.vicentejorquera.dev/proyectos/multi-step-form
+    demo: https://multi-step-form.vicentejorquera.dev
 ---
 
 
@@ -43,4 +43,4 @@ Se requiere utilizar HTML, CSS y JavaScript pero puede usar cualquier herramient
 
 ## Conclusiones
 
-Con el fin de desarrollar correctamente este proyecto me sumergí en el ecosistema de React, utilizando la librería sobre ViteJS, una popular herramienta que te permitirá crear apps de javascript con diferentes frameworks y librerías, junto a Redux para manejar el estado entre componentes, algo que tiene mucho potencial debido a la constante necesidad de modularizar las aplicaciones y acceder al contenido en el lado del cliente. Si quieres visitar mi proyecto puedes hacer clic en [aquí](https://multi-step-form.vicentejorquera.dev/your-info) o acceder al [código fuente](https://github.com/VicenteJ20/multi-step-form)
+Con el fin de desarrollar correctamente este proyecto me sumergí en el ecosistema de React, utilizando la librería sobre ViteJS, una popular herramienta que te permitirá crear apps de javascript con diferentes frameworks y librerías, junto a Redux para manejar el estado entre componentes, algo que tiene mucho potencial debido a la constante necesidad de modularizar las aplicaciones y organizar el código del lado del lado del cliente. Si quieres visitar mi proyecto puedes hacer clic [aquí](https://multi-step-form.vicentejorquera.dev/your-info) o acceder al [código fuente](https://github.com/VicenteJ20/multi-step-form)
