@@ -1,6 +1,18 @@
 [
+  
   {
-    "id": 1,
+    "id": 3,
+    "title": "Desarrollador Full Stack",
+    "description": "Desarrollo especializado de software de inventario y gestión de ventas con NextJS 14, TypeScript, Docker, PostgreSQL, JWT, API Rest AuthJS, i18N.",
+    "company": "Freelance",
+    "datePlace": {
+      "start": "2024-03",
+      "end": "2024-05",
+      "place": "Curicó, Chile"
+    }
+  },
+  {
+    "id": 2,
     "title": "Desarrollador Full Stack",
     "description": "Desarrollo de una solución full stack dedicada a la administración y organización de plazas de estacionamiento con NextJS 13 (app router), Github, Trello, Express, PostgreSQL, NextAuth, Raspberry Pi, Arduino, Sensores ultrasónicos e infraestructura cloud en AWS (EC2, RDS, S3, MongoDB Atlas).",
     "company": "Freelance",
@@ -11,24 +23,13 @@
     }
   },
   {
-    "id": 2,
+    "id": 1,
     "title": "Desarrollador Full Stack",
     "description": "Desarrollo y mantenimiento de plataforma interna de la compañía con .NET 4 y 6, SQL Server 2019, 2022, JQuery, JavaScript, C#, Docker.",
     "company": "Tibox Chile",
     "datePlace": {
       "start": "2023-01",
       "end": "2023-04",
-      "place": "Curicó, Chile"
-    }
-  },
-  {
-    "id": 3,
-    "title": "Desarrollador Full Stack",
-    "description": "Desarrollo especializado de software de inventario y gestión de ventas con NextJS 14, TypeScript, Docker, PostgreSQL, JWT, API Rest AuthJS, i18N.",
-    "company": "Freelance",
-    "datePlace": {
-      "start": "2024-03",
-      "end": "2024-05",
       "place": "Curicó, Chile"
     }
   }
