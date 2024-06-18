@@ -3,15 +3,32 @@ import Image from "astro/components/Image.astro";
 import Link from "../Link.astro";
 ---
 
+<style>
+
+  .hide-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scroll {
+    overflow: hidden !important;
+  
+  }
+</style>
+
 <header class="relative top-0 max-w-screen-2xl mx-auto transition-all duration-500 ease-in-out h-fit" id="headerNav">
-  <section id="headerSection" class='top-0 left-0 md:left-auto transition-all duration-500 ease-in-out flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between px-8 py-5 w-full fixed max-w-screen-2xl bg-opacity-80 z-20'>
+  <section id="headerSection" class='top-0 left-0 md:left-auto transition-all duration-500 ease-in-out flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between px-5 md:px-8 py-5 w-full fixed max-w-screen-2xl bg-opacity-80 z-20'>
     <div class='p-0 flex flex-row items-center gap-x-2'>
       <Image
         src="/images/profile.webp"
         width={500}
         height={500}
         alt="Vicente Jorquera profile"
-        class="rounded-full w-12 h-12"
+        class="rounded-full w-10 md:w-12 h-10 md:h-12"
         loading='eager'
       />
       <h2 class="text-lg font-medium text-stone-100">
@@ -35,7 +52,7 @@ import Link from "../Link.astro";
       </ul>
     </nav>
   </section>
-  <button id="toggleNav" class="absolute top-8 right-8 md:hidden z-20">
+  <button id="toggleNav" class="absolute top-[1.72rem] md:top-8 right-5 md:hidden z-20">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="h-6 w-6 text-white"
@@ -67,7 +84,7 @@ import Link from "../Link.astro";
       nav.classList.remove('size-0');
       nav.classList.add('size-100', 'pt-12');
       nav.classList.remove('opacity-0');
-      headerSection.classList.add('h-screen', 'bg-zinc-950', 'backdrop-blur-xl');
+      headerSection.classList.add('h-screen', 'bg-zinc-950', 'backdrop-blur-xl', 'hide-scroll');
     } else {
       nav.classList.remove('size-100', 'pt-12');
       nav.classList.add('size-0');

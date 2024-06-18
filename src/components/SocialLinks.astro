@@ -6,7 +6,7 @@ import LinkRefIcon from "./LinkRefIcon.astro";
 const { type, slug } = Astro.props;
 const baseLink = `https://blog.vicentejorquera.dev/articulos/persistir-scripts-entre-view-transitions-con-astro`;
 
-const twitterMessage = type === 'blog' ?
+const twitterMessage = type !== 'proyectos' ?
   "He leído este post de @jvicente_20 y el contenido me pareció muy interesante.👌\nAccede y comparte el contenido con el siguiente link.🔗:\n" : "Me pareció muy interesante el nuevo proyecto de @jvicente_20 🤓😎\nAccede al siguiente link y miralo por tu cuenta:"
 ---
 

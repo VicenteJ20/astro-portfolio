@@ -1,0 +1,43 @@
+/* Tag classes */
+
+.tag {
+  @apply text-sm font-medium rounded-full
+}
+
+.tag-link {
+  @apply px-4 py-2 block
+}
+
+.red-tag {
+  @apply bg-red-500 text-white
+}
+
+.blue-tag {
+  @apply bg-blue-500 text-white
+}
+
+.green-tag {
+  @apply bg-green-600 text-white
+}
+
+.yellow-tag {
+  @apply bg-yellow-500 text-black
+}
+
+.purple-tag {
+  @apply bg-purple-500 text-white
+}
+
+/* Post classes */
+
+#PostSectionBlog h2 {
+  @apply text-xl font-semibold py-2 text-zinc-100
+}
+
+#PostSectionBlog p {
+  @apply relative text-base py-2 leading-relaxed text-zinc-200
+}
+
+#PostSectionBlog pre {
+  @apply px-4 py-2 rounded-lg my-2
+}

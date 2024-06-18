@@ -18,14 +18,14 @@ const { item } = Astro.props as {
   class="bg-zinc-950 p-4 rounded-lg bg-opacity-45 border border-zinc-700 flex flex-col gap-1.5 experience-card select-none cursor-pointer transition-all duration-300 ease-in-out hover:bg-opacity-50"
 >
   <header class="flex flex-col items-start md:flex-row gap-1.5 md:gap-4 md:justify-between md:items-center">
-    <h3 class="font-semibold text-lg text-zinc-200">
+    <h3 class="font-semibold text-base md:text-lg text-zinc-200">
       {item.company} - {item.title}
     </h3>
-    <p class="font-medium text-base text-zinc-100">
+    <p class="font-medium text-xs  md:text-base text-zinc-100">
       {item.datePlace.place} | {item.datePlace.start} - {item.datePlace.end}
     </p>
   </header>
-  <p class='text-zinc-300 line-clamp-1 experience-description'>{item.description}</p>
+  <p class='text-zinc-300 line-clamp-1 experience-description text-sm md:text-base'>{item.description}</p>
 </div>
 
 <script>

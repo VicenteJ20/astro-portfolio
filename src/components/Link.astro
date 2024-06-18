@@ -7,7 +7,7 @@ const { href, text, type, icon } = Astro.props as {
 }
 ---
 
-<a href={href} class={` text-slate-50 ${type === 'primary' && 'pl-5 relative'} ${type === 'more' ? 'underline block w-fit' : 'w-full'}`}>
+<a href={href} target={type === 'external' ? '_blank' : '_self'} class={`text-slate-50 whitespace-nowrap ${type === 'primary' ? 'pl-5 relative text-xl md:text-lg font-bold md:font-medium' : type !== 'secondary' && 'text-sm sm:text-base'} ${type === 'more' ? 'underline block w-fit' : 'w-full'}`}>
   {
     type === 'primary' && <span class="md:hidden absolute top-0 left-0 bottom-0 rounded-xl w-2 bg-zinc-500"></span>
   }

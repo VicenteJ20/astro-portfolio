@@ -6,7 +6,7 @@ import ExternalProjectLink from "../components/ExternalProjectLink.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title} layout="post">
+<BaseLayout pageTitle={frontmatter.title} layout="project">
   <header class="py-6 flex flex-col gap-8">
     <div class="flex flex-row gap-2 items-center text-lg">
       <h3 class="capitalize text-lime-300">{frontmatter.type}</h3>
@@ -30,7 +30,7 @@ const { frontmatter } = Astro.props;
       src={frontmatter.image.url}
       width={1200}
       height={800}
-      class="w-full max-h-80 md:max-h-[35rem] object-cover object-top rounded-xl"
+      class="w-full max-h-80 md:max-h-[35rem] lg:max-h-[42rem] object-cover object-center rounded-xl"
       loading="eager"
     />
     <figcaption class="italic">Fuente: {frontmatter.image.source}</figcaption>

@@ -3,12 +3,94 @@ import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
 import SocialLinks from "../components/SocialLinks.astro";
 const { frontmatter } = Astro.props;
+const orderColors = [
+  {
+    class: "red-tag",
+  },
+  {
+    class: "blue-tag",
+  },
+  {
+    class: "green-tag",
+  },
+  {
+    class: "yellow-tag",
+  },
+  {
+    class: "purple-tag",
+  },
+];
 ---
 
 <BaseLayout pageTitle={frontmatter.title} layout="post">
   <header class="py-6 flex flex-col gap-8">
-    <div class="flex flex-row gap-2 items-center text-lg">
-      <h3 class="capitalize">{frontmatter.title}</h3>
+    <ul
+      class="flex flex-col sm:flex-row gap-1.5 sm:gap-3 items-start sm:items-center"
+    >
+      <li class="flex flex-row gap-2 items-center text-lg">
+        <h3 class="capitalize text-lime-300">{frontmatter.type}</h3>
+      </li>
+      <li class="hidden sm:block">
+        <span class="w-2 h-2 bg-zinc-400 block rounded-full"></span>
+      </li>
+      <li class="text-sm text-gray-200">
+        <span>Publicado el: </span>
+        <time datetime={frontmatter.pubDate}
+          >{
+            frontmatter.pubDate.toLocaleDateString("es-CL", {
+              year: "numeric",
+              month: "long",
+              day: "2-digit",
+            })
+          }</time
+        >
+      </li>
+    </ul>
+    <section class='flex flex-col gap-6'>
+      <h1 class="text-3xl md:text-4xl font-bold text-white">
+        {frontmatter.title}
+      </h1>
+      <p class="text-base text-gray-300">{frontmatter.description}</p>
+    </section>
+    <figure class="flex flex-col gap-2">
+      <Image
+        src={frontmatter.image.url}
+        alt={frontmatter.image.alt}
+        width={1200}
+        height={800}
+        class="rounded-lg max-h-96 md:max-h-[42rem] w-full object-cover"
+        loading="eager"
+      />
+      <figcaption class="italic">Fuente: {frontmatter.image.source}</figcaption>
+    </figure>
+    <div class="flex flex-row gap-3 items-center justify-between">
+      <div class="flex flex-row gap-3 items-center">
+        {
+          frontmatter.author.image && (
+            <Image
+              alt={frontmatter.author.name}
+              src={frontmatter.author.image}
+              class="w-8 h-8 rounded-full border-2 border-lime-500"
+              width={100}
+              height={100}
+              loading="eager"
+            />
+          )
+        }
+        <p>{frontmatter.author.name}</p>
+      </div>
+      <SocialLinks type={frontmatter.type} slug={frontmatter.slug} />
     </div>
   </header>
+  <section id="PostSectionBlog">
+    <slot />
+  </section>
 </BaseLayout>
+
+<script>
+  const pre = document.querySelectorAll("#PostSectionBlog pre");
+
+  pre.forEach((e) => {
+    e.removeAttribute("tabindex");
+  });
+</script>
