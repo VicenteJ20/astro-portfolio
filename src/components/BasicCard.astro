@@ -10,7 +10,7 @@ const { title, description, slug, minimal, image, type } = Astro.props
     image && (
       <a href={`/${type}/${slug}`}>
         <Image
-          class="rounded-t-lg w-full h-80 lg:h-60 object-cover"
+          class="rounded-t-lg w-full h-48 sm:h-80 lg:h-60 object-cover"
           src={image.url}
           alt={image.alt}
           width={1200}

@@ -4,17 +4,33 @@ import BaseLayout from "./BaseLayout.astro";
 import SocialLinks from "../components/SocialLinks.astro";
 import ExternalProjectLink from "../components/ExternalProjectLink.astro";
 const { frontmatter } = Astro.props;
+const bothLinks = Object.keys(frontmatter.links).length
 ---
 
 <BaseLayout pageTitle={frontmatter.title} layout="project">
   <header class="py-6 flex flex-col gap-8">
-    <div class="flex flex-row gap-2 items-center text-lg">
-      <h3 class="capitalize text-lime-300">{frontmatter.type}</h3>
-      <div class="w-2 h-1 bg-zinc-300 rounded-lg"></div>
-      <h3 class="text-zinc-300">
-        Publicado el: {frontmatter.pubDate.toLocaleDateString("es-CL")}
-      </h3>
-    </div>
+    <ul
+      class="flex flex-col sm:flex-row gap-1.5 sm:gap-3 items-start sm:items-center"
+    >
+      <li class="flex flex-row gap-2 items-center text-lg">
+        <h3 class="capitalize text-lime-300">{frontmatter.type}</h3>
+      </li>
+      <li class="hidden sm:block">
+        <span class="w-2 h-2 bg-zinc-400 block rounded-full"></span>
+      </li>
+      <li class="text-sm text-gray-200">
+        <span>Publicado el: </span>
+        <time datetime={frontmatter.pubDate}
+          >{
+            frontmatter.pubDate.toLocaleDateString("es-CL", {
+              year: "numeric",
+              month: "long",
+              day: "2-digit",
+            })
+          }</time
+        >
+      </li>
+    </ul>
     <div class="flex flex-col gap-1.5">
       <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold">
         {frontmatter.title} :
@@ -58,9 +74,17 @@ const { frontmatter } = Astro.props;
   <section class="pb-6 pt-2">
     <p class="break-words">{frontmatter.description}</p>
   </section>
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-    <ExternalProjectLink url={frontmatter.links.demo} type="web" />
-    <ExternalProjectLink url={frontmatter.links.repo} type="repo" />
+  <section class={`grid grid-cols-1 ${bothLinks >= 2 && 'md:grid-cols-2'} gap-4 items-center`}>
+    {
+      frontmatter.links.demo && (
+        <ExternalProjectLink url={frontmatter.links.demo} type="web" />
+      )
+    }
+    {
+      frontmatter.links.repo && (
+        <ExternalProjectLink url={frontmatter.links.repo} type="repo" />
+      )
+    }
   </section>
   <section class="py-6 inset-3.5" id="PostProjectSlot">
     <slot />
@@ -69,6 +93,11 @@ const { frontmatter } = Astro.props;
 
 <script>
   const links = document.querySelectorAll("#PostProjectSlot a");
+  const images = document.querySelectorAll("#PostProjectSlot img");
+
+  images.forEach((image) => {
+    image.setAttribute("loading", "lazy");
+  });
   links.forEach((link) => {
     link.setAttribute("target", "_blank");
     link.setAttribute("rel", "noopener noreferrer");
