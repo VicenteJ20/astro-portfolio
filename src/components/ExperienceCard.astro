@@ -34,7 +34,7 @@ const { item } = Astro.props as {
 
 
   cards.forEach((card, index) => {
-    card.addEventListener("click", (item) => {
+    card.addEventListener("click", () => {
       description[index].classList.toggle("line-clamp-1");
       if (description[index].classList.contains('text-zinc-300')) {
         card.classList.remove('border-zinc-700');
