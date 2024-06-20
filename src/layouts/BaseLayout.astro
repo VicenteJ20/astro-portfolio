@@ -29,6 +29,11 @@ const { pageTitle, layout, metaKeys, metaDescription, metaOgDesc, metaOgTitle, m
       metaOgImage={metaOgImage}
     />
     
+    <link rel='sitemap' href='/sitemap-index.xml' />
+    <link rel='alternate' type='application/rss+xml'
+    title='RSS Feed by Vicente Jorquera' href={`${Astro.site}rss.xml`} />
+    <link rel='robots' href='/robots.txt' />
+    
     <title> {pageTitle} | Vicente Jorquera</title>
     <style is:global>
       body {
