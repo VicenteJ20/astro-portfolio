@@ -1,0 +1,46 @@
+---
+const { metaKeys, metaDescription, metaOgTitle, metaOgDesc, metaOgImage } =
+  Astro.props;
+const site = "https://www.vicentejorquera.dev";
+const domain = "vicentejorquera.dev";
+
+const metaDesc = metaOgDesc
+  ? metaOgDesc
+  : "Bienvenido a mi web, soy Vicente Jorquera y soy desarrollador full stack, analista programador e ingeniero en informática";
+
+const metaOgDescription = metaDescription
+  ? metaDescription
+  : "Bienvenido a mi web, soy Vicente Jorquera y soy desarrollador full stack, analista programador e ingeniero en informática";
+
+const metaKeyProcessed = metaKeys
+  ? `${metaKeys}, by vicente, by vicente jorquera, vicente jorquera`
+  : "Vicente Jorquera, Vicente, Jorquera, desarrollador, web developer, full stack developer, desarrollador en chile, desarrollador chileno, desarrollador en curicó, analista programador, ingeniero en informática, articulos de programación, astro, nextjs, react, mern, vitejs";
+
+const metaDescImg = metaOgImage ? metaOgImage : "/images/og-image.webp";
+const metaOgTitleP = `${metaOgTitle} | Vicente Jorquera`;
+---
+
+<meta name="keywords" content={metaKeyProcessed} />
+
+<meta name="description" content={metaDesc} />
+
+<!-- HTML META TAGS  -->
+<meta property="og:title" content={metaOgTitleP} />
+<meta property="og:description" content={metaOgDescription} />
+
+<!-- FACEBOOK META  -->
+<meta property="og:url" content={site} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Vicente Jorquera" />
+<meta property="og:locale" content="es_CL" />
+<meta property="og:title" content={metaOgTitle} />
+
+<meta property="og:image" content={metaDescImg} />
+
+<!-- TWITTER META  -->
+<meta name="twitter:card" content={metaDescImg} />
+<meta property="twitter:domain" content={domain} />
+<meta property="twitter:url" content={site} />
+<meta name="twitter:title" content={metaOgTitle} />
+<meta name="twitter:description" content={metaOgDescription} />
+<meta name="twitter:image" content={metaDescImg} />
