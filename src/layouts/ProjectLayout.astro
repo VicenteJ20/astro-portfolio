@@ -4,10 +4,18 @@ import BaseLayout from "./BaseLayout.astro";
 import SocialLinks from "../components/SocialLinks.astro";
 import ExternalProjectLink from "../components/ExternalProjectLink.astro";
 const { frontmatter } = Astro.props;
-const bothLinks = Object.keys(frontmatter.links).length
+const bothLinks = Object.keys(frontmatter.links).length;
 ---
 
-<BaseLayout pageTitle={frontmatter.title} layout="project">
+<BaseLayout
+  pageTitle={frontmatter.title}
+  layout="project"
+  metaDescription={frontmatter.description}
+  metaKeys={frontmatter.keys}
+  metaOgTitle={frontmatter.title}
+  metaOgDesc={frontmatter.description}
+  metaOgImage={frontmatter.image.url}
+>
   <header class="py-6 flex flex-col gap-8">
     <ul
       class="flex flex-col sm:flex-row gap-1.5 sm:gap-3 items-start sm:items-center"
@@ -74,7 +82,9 @@ const bothLinks = Object.keys(frontmatter.links).length
   <section class="pb-6 pt-2">
     <p class="break-words">{frontmatter.description}</p>
   </section>
-  <section class={`grid grid-cols-1 ${bothLinks >= 2 && 'md:grid-cols-2'} gap-4 items-center`}>
+  <section
+    class={`grid grid-cols-1 ${bothLinks >= 2 && "md:grid-cols-2"} gap-4 items-center`}
+  >
     {
       frontmatter.links.demo && (
         <ExternalProjectLink url={frontmatter.links.demo} type="web" />

@@ -2,7 +2,9 @@
 import '@fontsource/poppins';
 import Footer from "../components/Footer.astro";
 import Header from "../components/header/Header.astro";
-const { pageTitle, layout } = Astro.props;
+import MetaTags from '../components/MetaTags.astro';
+const { pageTitle, layout, metaKeys, metaDescription, metaOgDesc, metaOgTitle, metaOgImage } = Astro.props;
+
 ---
 
 <html lang="es">
@@ -18,7 +20,16 @@ const { pageTitle, layout } = Astro.props;
         <link rel="stylesheet" href='/src/styles/postStyle.css' />
       )
     }
-    <title>{pageTitle}</title>
+
+    <MetaTags
+      metaKeys={metaKeys}
+      metaDescription={metaDescription}
+      metaOgTitle={metaOgTitle}
+      metaOgDesc={metaOgDesc}
+      metaOgImage={metaOgImage}
+    />
+    
+    <title> {pageTitle} | Vicente Jorquera</title>
     <style is:global>
       body {
         font-family: 'Poppins', sans-serif;
