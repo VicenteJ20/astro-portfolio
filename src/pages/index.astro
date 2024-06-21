@@ -1,5 +1,4 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Link from "../components/Link.astro";
 import LinkedinIcon from "../icons/LinkedinIcon.astro";
@@ -11,8 +10,10 @@ import allExperience from "../json/experience.json";
 import ExperienceCard from "../components/ExperienceCard.astro";
 
 import type { PostBasicProps } from "../interfaces/Posts";
-const allPosts = (await getCollection("posts")).slice(-3);
-const allProjects = (await getCollection("projects")).slice(-3);
+import {getCollectionByDate} from '../utils/getCollectionByDate';
+
+const allPosts = await getCollectionByDate("posts", 2);
+const allProjects = await getCollectionByDate("projects", 3);
 ---
 
 <BaseLayout pageTitle="Inicio">
@@ -27,7 +28,7 @@ const allProjects = (await getCollection("projects")).slice(-3);
         > con más de 3 años de experiencia desarrollando soluciones full-stack
         <span class="italic">(frontend + backend + infraestructura).</span> Actualmente
         mi stack de preferencia es NextJS + TypeScript + Prisma + AWS, sin embargo,
-        cuento otras habilidadesy tecnologías que encontrarás en mis proyectos y
+        cuento otras habilidades y tecnologías que encontrarás en mis proyectos y
         posts.
       </p>
       <ul class="flex gap-8 items-center">
