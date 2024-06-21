@@ -30,14 +30,48 @@
 
 /* Post classes */
 
-#PostSectionBlog h2 {
-  @apply text-xl font-semibold py-2 text-zinc-100
+#PostSectionBlog {
+  @apply  bg-opacity-35 bg-black p-4 rounded-lg my-4
 }
 
 #PostSectionBlog p {
   @apply relative text-base py-2 leading-relaxed text-zinc-200
 }
 
+#PostSectionBlog h2{
+  @apply text-2xl font-semibold py-2 ;
+}
+
+#PostSectionBlog h3{
+  @apply text-xl font-semibold py-2 ;
+}
+
+#PostSectionBlog h4{
+  @apply text-lg font-semibold py-2 ;
+}
+
+#PostSectionBlog h5{
+  @apply text-base font-semibold py-2 ;
+}
+
+#PostSectionBlog p a {
+  @apply text-base font-medium underline text-lime-500 hover:text-lime-600 transition-all duration-300 ease-in-out visited:text-purple-400 active:text-blue-500;
+}
+
+#PostSectionBlog ul {
+  @apply list-disc list-inside pl-4 flex flex-col gap-1.5 py-2;
+}
+
+#PostSectionBlog ul li strong{
+  @apply text-base font-semibold;
+}
+
+
 #PostSectionBlog pre {
   @apply px-4 py-2 rounded-lg my-2
+}
+
+
+#PostSectionBlog img {
+  @apply max-w-full md:max-w-[70%] h-auto my-2 mx-auto rounded-lg;
 }

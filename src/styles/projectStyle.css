@@ -1,6 +1,7 @@
 #PostProjectSlot {
-  @apply text-zinc-100
+  @apply text-zinc-100 bg-opacity-35 bg-black p-4 rounded-lg my-4
 }
+
 #PostProjectSlot h2{
   @apply text-2xl font-semibold py-2 ;
 }
