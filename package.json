@@ -7,7 +7,7 @@
     "tailwind-public-post": "tailwindcss -i src/styles/postStyle.css -o public/styles/postStyle.css",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && tailwindcss -i src/styles/projectStyle.css -o public/styles/projectStyle.css && tailwindcss -i src/styles/postStyle.css -o public/styles/postStyle.css && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

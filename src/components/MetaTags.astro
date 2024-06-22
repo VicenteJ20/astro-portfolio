@@ -16,7 +16,7 @@ const metaKeyProcessed = metaKeys ? `${metaKeys},vicente jorquera,vicente,jorque
   : "Vicente Jorquera, Vicente, Jorquera, desarrollador, web developer, full stack developer, desarrollador en chile, desarrollador chileno, desarrollador en curicó, analista programador, ingeniero en informática, articulos de programación, astro, nextjs, react, mern, vitejs";
 
 const metaDescImg = metaOgImage ? metaOgImage : "/images/og-image.webp";
-const metaOgTitleP = `${metaOgTitle} | Vicente Jorquera`;
+const metaOgTitleP = metaOgTitle ? `${metaOgTitle} | Vicente Jorquera` : "Vicente Jorquera | Desarrollador Full Stack";
 ---
 
 <meta name="keywords" content={metaKeyProcessed} />
