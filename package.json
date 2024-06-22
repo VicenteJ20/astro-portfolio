@@ -3,6 +3,8 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "tailwind-public-project": "tailwindcss -i src/styles/projectStyle.css -o public/styles/projectStyle.css",
+    "tailwind-public-post": "tailwindcss -i src/styles/postStyle.css -o public/styles/postStyle.css",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",

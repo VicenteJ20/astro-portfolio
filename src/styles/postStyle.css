@@ -1,0 +1,77 @@
+/* Tag classes */
+
+.tag {
+  @apply text-sm font-medium rounded-full
+}
+
+.tag-link {
+  @apply px-4 py-2 block
+}
+
+.red-tag {
+  @apply bg-red-500 text-white
+}
+
+.blue-tag {
+  @apply bg-blue-500 text-white
+}
+
+.green-tag {
+  @apply bg-green-600 text-white
+}
+
+.yellow-tag {
+  @apply bg-yellow-500 text-black
+}
+
+.purple-tag {
+  @apply bg-purple-500 text-white
+}
+
+/* Post classes */
+
+#PostSectionBlog {
+  @apply  bg-opacity-35 bg-black p-4 rounded-lg my-4
+}
+
+#PostSectionBlog p {
+  @apply relative text-base py-2 leading-relaxed text-zinc-200
+}
+
+#PostSectionBlog h2{
+  @apply text-2xl font-semibold py-2 ;
+}
+
+#PostSectionBlog h3{
+  @apply text-xl font-semibold py-2 ;
+}
+
+#PostSectionBlog h4{
+  @apply text-lg font-semibold py-2 ;
+}
+
+#PostSectionBlog h5{
+  @apply text-base font-semibold py-2 ;
+}
+
+#PostSectionBlog p a {
+  @apply text-base font-medium underline text-lime-500 hover:text-lime-600 transition-all duration-300 ease-in-out visited:text-purple-400 active:text-blue-500;
+}
+
+#PostSectionBlog ul {
+  @apply list-disc list-inside pl-4 flex flex-col gap-1.5 py-2;
+}
+
+#PostSectionBlog ul li strong{
+  @apply text-base font-semibold;
+}
+
+
+#PostSectionBlog pre {
+  @apply px-4 py-2 rounded-lg my-2
+}
+
+
+#PostSectionBlog img {
+  @apply max-w-full md:max-w-[70%] h-auto my-2 mx-auto rounded-lg;
+}
