@@ -1,0 +1,72 @@
+---
+import BasicCard from "../components/BasicCard.astro";
+import CardsGrid from "../components/CardsGrid.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollectionByDate } from "../utils/getCollectionByDate";
+
+const requestedUrl = await new URL(Astro.request.url).pathname
+  .split("/")
+  .filter(Boolean);
+
+let searchedFor = "";
+if (requestedUrl.length > 0) {
+  if (requestedUrl[0].toLocaleLowerCase() === "blog") {
+    searchedFor = "blog";
+  } else if (requestedUrl[0].toLocaleLowerCase() === "proyectos") {
+    searchedFor = "proyectos";
+  }
+}
+
+let posts = [];
+
+if (searchedFor === "blog") {
+  posts = await getCollectionByDate("posts");
+} else if (searchedFor === "proyectos") {
+  posts = await getCollectionByDate("projects", 3);
+}
+---
+
+<BaseLayout
+  pageTitle="No encontrado"
+  metaDescription="La web que buscas no se encuentra en este servidor, quizá se deba a que estás buscando en las URLs de mi web anterior, te invito a seleccionar una de las opciones a continuación para continuar o puedes dirigirte manualmente la página principal."
+  metaKeys="404,error, not found, pagina no encontrada, no encontramos lo que buscas"
+>
+  <header class="flex flex-col gap-4 my-20 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold">
+      ¡Oops! no encontramos la página que buscas.
+    </h1>
+    <p class="text-base lg:text-lg">
+      Asegúrate de que hayas escrito la URL correctamente. Puedes hacer click <a
+        href="/"
+        class="font-medium text-lime-500 transition-all ease-in-out hover:text-lime-800"
+        >aquí</a
+      > para volver a la página principal. o puedes visitar las sugerencias relacionadas
+      a tu búsqueda aquí abajo.
+    </p>
+  </header>
+  <div class='flex flex-col gap-4'>
+    <h2 class={`text-2xl font-bold ${posts.length > 0 ? 'text-start' : 'text-center'}`}>
+      {
+        searchedFor === "blog"
+          ? "Últimas entradas del blog"
+          : posts.length > 0
+            ? "Últimos proyectos"
+            : "No han encontrado coincidencias"
+      }
+    </h2>
+    <CardsGrid>
+      {
+        posts.length > 0 &&
+          posts.map((post) => (
+            <BasicCard
+              title={post.data.title}
+              description={post.data.description}
+              image={post.data.image}
+              url={post.url}
+              key={post.url}
+            />
+          ))
+      }
+    </CardsGrid>
+  </div>
+</BaseLayout>
