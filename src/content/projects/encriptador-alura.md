@@ -1,21 +1,36 @@
 ---
-title: 'Encriptador Alura Latam'
-fullTitle: 'Encriptador básico con HTML5 + CSS3 + JavaScript'
+title: Encriptador Alura Latam
+fullTitle: Encriptador básico con HTML5 + CSS3 + JavaScript
 pubDate: 2022-08-03
-description: 'Este proyecto es uno de los primeros desafíos de código que desarrollé desde cero uniendo diferentes tecnologías web e infraestructura como servicio para desplegar el proyecto. Cabe mencionar que este proyecto está desarrollado como parte de la ruta ofrecida por Alura Latam en conjunto con Oracle y su programa Oracle One.'
+description: Este proyecto es uno de los primeros desafíos de código que desarrollé desde cero uniendo diferentes tecnologías web e infraestructura como servicio para desplegar el proyecto. Cabe mencionar que este proyecto está desarrollado como parte de la ruta ofrecida por Alura Latam en conjunto con Oracle y su programa Oracle One.
 author:
-    image: '/images/profile.webp'
-    name: 'Vicente Jorquera'
+  image: /images/profile.webp
+  name: Vicente Jorquera
 image:
-    url: '/images/encriptador-mockup.webp'
-    alt: 'Desktop demo social links profile'
-    source: 'Elaboración propia'
-tags: ["HTML5", "JavaScript", "CSS3"]
-slug: 'encriptador-alura-latam-by-vicente-jorquera'
-type: 'proyectos'
+  url: /images/encriptador-mockup.webp
+  alt: Desktop demo social links profile
+  source: Elaboración propia
+tags:
+  - HTML5
+  - JavaScript
+  - CSS3
+slug: encriptador-alura-latam-by-vicente-jorquera
+type: proyectos
 links:
-    repo: https://github.com/VicenteJ20/encriptador_Alura
-    demo: https://vicentej20.github.io/encriptador_Alura/
+  repo: https://github.com/VicenteJ20/encriptador_Alura
+  demo: https://vicentej20.github.io/encriptador_Alura/
+keywords:
+  - HTML5
+  - CSS3
+  - JavaScript
+  - Proyecto Alura
+  - Oracle One
+  - Vicente Jorquera Alura
+  - Encriptador
+  - Encriptador básico
+  - Challenge encriptador
+  - desafío encriptador
+  - encriptador de texto
 ---
 
 ## ¿En qué consiste el proyecto?

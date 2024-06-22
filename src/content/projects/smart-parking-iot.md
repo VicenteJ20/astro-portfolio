@@ -1,20 +1,41 @@
 ---
-title: 'Smart Parking - IoT'
-fullTitle: "Sistema de administración de estacionamientos"
+title: Smart Parking - IoT
+fullTitle: Sistema de administración de estacionamientos
 pubDate: 2023-01-03
-description: "Esta es la solución planteada para nuestro proyecto de integración en INACAP, consiste en una combinación de hardware y software para crear una solución que permita administrar plazas y lugares de estacionamiento. Este proyecto en cuestión está desarrollado por un grupo de trabajo conformado por estudiantes de Ingeniería en Informática de la sede INACAP Curicó."
+description: Esta es la solución planteada para nuestro proyecto de integración en INACAP, consiste en una combinación de hardware y software para crear una solución que permita administrar plazas y lugares de estacionamiento. Este proyecto en cuestión está desarrollado por un grupo de trabajo conformado por estudiantes de Ingeniería en Informática de la sede INACAP Curicó.
 author:
-  image: "/images/profile.webp"
-  name: "Vicente Jorquera"
+  image: /images/profile.webp
+  name: Vicente Jorquera
 image:
-  url: "/images/home-image-landing.webp"
-  alt: "imagen representativa"
-  source: "Imagen de stock en Unsplash"
-tags: ["React", "TypeScript", "AWS"]
-slug: "smart-parking-institute-version"
-type: "proyectos"
+  url: /images/home-image-landing.webp
+  alt: imagen representativa
+  source: Imagen de stock en Unsplash
+tags:
+  - React
+  - TypeScript
+  - AWS
+slug: smart-parking-institute-version
+type: proyectos
 links:
   repo: https://github.com/VicenteJ20/estacionamiento-inteligente-cliente
+keywords:
+  - Proyecto de integración
+  - proyecto universidad
+  - administrador de estacionamientos
+  - software de administración de estacionamientos
+  - proyecto en grupo
+  - inacap
+  - curicó
+  - vicente jorquera curicó
+  - vicente jorquera chile
+  - proyecto grupal inacap curicó
+  - INACAP CURICÓ
+  - proyecto IoT
+  - iot
+  - react iot
+  - arduino
+  - raspberry pi pico
+  - raspberry
 ---
 
 ## Problemática encontrada

@@ -1,18 +1,28 @@
 ---
-title: "ViewTransitions en Astro"
+title: ViewTransitions en Astro
 pubDate: 2024-02-25
-description: "Si te ha ocurrido como a mi, que he creado mi primer proyecto en Astro y he intentado usar las nuevas transiciones y me ha tocado ver como los scripts que incluían mis páginas .astro quedaban inutilizables posterior a navegar entre las páginas."
-author: {
-    image: "/images/profile.webp",
-    name: "Vicente Jorquera"
-}
+description: Si te ha ocurrido como a mi, que he creado mi primer proyecto en Astro y he intentado usar las nuevas transiciones y me ha tocado ver como los scripts que incluían mis páginas .astro quedaban inutilizables posterior a navegar entre las páginas.
+author:
+  image: /images/profile.webp
+  name: Vicente Jorquera
 image:
-  url: "/images/view-transitions-bg.webp"
-  alt: "ViewTransitions en Astro"
-  source: "Elaboración propia"
-tags: ["Astro", "JavaScript"]
-slug: "viewtransitions-en-astro-framework"
-type: "posts"
+  url: /images/view-transitions-bg.webp
+  alt: ViewTransitions en Astro
+  source: Elaboración propia
+tags:
+  - Astro
+  - JavaScript
+  - tutorial
+slug: viewtransitions-en-astro-framework
+type: posts
+keywords:
+  - Astro
+  - ViewTransitions
+  - JavaScript
+  - Manage viewtransitions
+  - astro framewor
+  - astro framework
+  - astro basics
 ---
 
 ## ¿Por qué ocurre este problema?
