@@ -4,6 +4,8 @@ const { url, message } = Astro.props;
 
 <a
   href={url}
+  title={message ? message : "Link de referencia"}
+  aria-labelledby={message ? message : "Link de referencia"}
   target="_blank"
   rel="noopener noreferrer"
   class={`fill-zinc-300  hover:fill-lime-100 transition-all duration-300 ease-in-out w-8 h-8 block ${message && "flex flex-row md:flex-col gap-4 items-center w-full hover:underline cursor-pointer"}`}
