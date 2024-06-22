@@ -45,13 +45,13 @@ if (searchedFor === "blog") {
     </p>
   </header>
   <div class='flex flex-col gap-4'>
-    <h2 class={`text-xl  font-bold ${posts.length > 0 ? 'text-start' : 'text-center'}`}>
+    <h2 class={`text-lg md:text-xl  font-bold ${posts.length > 0 ? 'text-start' : 'text-center'}`}>
       {
         searchedFor === "blog"
           ? "Últimas entradas del blog"
           : posts.length > 0
             ? "Últimos proyectos"
-            : "No han encontrado coincidencias"
+            : "No han encontrado sugerencias relacionadas a tu búsqueda."
       }
     </h2>
     <CardsGrid>
