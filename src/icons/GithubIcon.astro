@@ -1,5 +1,5 @@
 ---
-const { classes } = Astro.props;
+const { classes, title } = Astro.props;
 ---
 
 <svg
@@ -9,9 +9,7 @@ const { classes } = Astro.props;
   xmlns:xlink="http://www.w3.org/1999/xlink",
   class={classes}
 >
-  <title>github [#142]</title>
-  <desc>Created with Sketch.</desc>
-  <defs> </defs>
+  <title>{title}</title>
   <g id="Page-1" stroke="none" stroke-width="1"  fill-rule="evenodd">
     <g
       id="Dribbble-Light-Preview"
